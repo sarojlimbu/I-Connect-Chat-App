@@ -26,7 +26,7 @@ type FormData = {
   password: string;
 };
 
-export default function SignupPage() {
+export default function Login() {
   const router = useRouter();
   const {
     register,
