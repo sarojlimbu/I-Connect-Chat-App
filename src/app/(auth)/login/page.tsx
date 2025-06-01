@@ -1,17 +1,16 @@
 "use client";
 
-import { useState } from "react";
 import {
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Loader2Icon } from "lucide-react";
+import logo from "../../../../public/logo/logo.png";
 
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
@@ -20,6 +19,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/utils/firebaseConfig";
 import { formatFirebaseError } from "@/utils/helperFunctions";
 import { useAuthStore } from "@/store/authStore";
+import Image from "next/image";
 
 type FormData = {
   email: string;
@@ -71,7 +71,7 @@ export default function Login() {
     <main className="grid gap-2">
       <Card className="w-full border-0  shadow-none max-w-sm rounded-none ">
         <CardHeader className="text-center">
-          <CardTitle>LOGO</CardTitle>
+          <Image alt="logo" src={logo} />
         </CardHeader>
         <CardContent>
           <form id="loginForm" onSubmit={handleSubmit(onSubmit)}>

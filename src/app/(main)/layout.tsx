@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { Toaster } from "sonner";
-import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/components/sidebar/Sidebar";
+
+import PresenceTracker from "@/components/chat/PresenceTracker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +31,7 @@ export default function MainLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-row justify-center items-center h-screen w-screen`}
       >
+        <PresenceTracker />
         <Sidebar />
         <main className="w-full h-full">
           {children}

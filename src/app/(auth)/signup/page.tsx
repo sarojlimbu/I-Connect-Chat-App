@@ -6,11 +6,11 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Loader2Icon } from "lucide-react";
+import logo from "../../../../public/logo/logo.png";
 
 import { useForm } from "react-hook-form";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
@@ -19,8 +19,8 @@ import { addDoc, collection } from "firebase/firestore";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { formatFirebaseError } from "@/utils/helperFunctions";
-import { useState } from "react";
 import { useAuthStore } from "@/store/authStore";
+import Image from "next/image";
 
 type FormData = {
   firstName: string;
@@ -73,10 +73,10 @@ export default function SignupPage() {
   };
 
   return (
-    <main className="grid gap-2">
-      <Card className="w-full border-0 sm:border shadow-none max-w-sm rounded-none sm:px-4 sm:py-8">
+    <main className="grid gap-2 pt-0">
+      <Card className="w-full border-0 sm:border shadow-none max-w-sm rounded-none sm:px-4">
         <CardHeader className="text-center">
-          <CardTitle>LOGO</CardTitle>
+          <Image alt="logo" src={logo} />
           <CardDescription>
             Sign up to connect with new friends.
           </CardDescription>
