@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { MessageCircle, LogOut, Settings, User } from "lucide-react";
+import { MessageCircle, LogOut, User } from "lucide-react";
 import { Separator } from "../ui/separator";
 import { useAuthStore } from "@/store/authStore";
 import Image from "next/image";
