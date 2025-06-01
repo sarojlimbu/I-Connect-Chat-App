@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
+
 import { Toaster } from "sonner";
 
 const geistSans = Geist({
@@ -14,11 +15,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "I-Connect",
-  description: "Seemless chatting application",
+  title: "I-Connect - Auth",
+  description: "Seamless chatting application - Authentication",
 };
 
-export default function RootLayout({
+export default function AuthLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -26,10 +27,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-row justify-center items-center h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-row justify-center items-center h-screen w-screen`}
       >
-        {children}
-        <Toaster />;
+        <main className="w-full h-full flex flex-row justify-center items-center">
+          {children}
+          <Toaster />
+        </main>
       </body>
     </html>
   );
