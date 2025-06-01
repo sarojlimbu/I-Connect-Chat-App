@@ -34,7 +34,7 @@ export default function Login() {
     formState: { errors },
   } = useForm<FormData>();
 
-  const { isLoading, setLoading, setUser, user } = useAuthStore();
+  const { isLoading, setLoading, setUser } = useAuthStore();
 
   const onSubmit = async (data: FormData) => {
     setLoading(true);
